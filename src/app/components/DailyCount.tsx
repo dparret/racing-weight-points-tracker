@@ -1,8 +1,12 @@
 import React  from 'react';
 
-const DailyCount : React.FC = ({}) => 
+interface DailyCountProps {
+  count: number
+}
+
+const DailyCount : React.FC<DailyCountProps> = ({ count }) => 
   <div className='text-3xl font-mono'>
-  {`Daily Count: ` + 0}
+  {`Daily Count: ` + count}
   </div>
 
 export default DailyCount;
