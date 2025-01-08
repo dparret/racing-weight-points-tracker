@@ -15,7 +15,15 @@ const PointsTracker = () => {
       day: startOfToday().toString(), 
       count: {
         fruits: [],
-        vegetables: []
+        vegetables: [],
+        leanMeats: [],
+        nuts: [],
+        wholeGrains: [],
+        dairy: [],
+        refinedGrains: [],
+        sweets: [],
+        friedFood: [],
+        proteins: [],
       }
     }, 
     { initializeWithValue: false })

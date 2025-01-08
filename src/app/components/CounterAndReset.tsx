@@ -2,7 +2,7 @@
 
 import React, { SetStateAction }  from 'react';
 import { ArrowUturnLeftIcon } from '@heroicons/react/16/solid';
-import { dailyFoodCounter, foodOptions } from '../utils';
+import { dailyFoodCounter, FOOD_OPTIONS, foodOptions } from '../utils';
 
 interface CounterButtonAndResetProps {
     foodOption: foodOptions,
@@ -18,7 +18,10 @@ const CounterButtonAndReset: React.FC<CounterButtonAndResetProps> = ({ foodOptio
   <div className="flex flex-row gap-2">
     <button 
       type="button" 
-      className="grow text-white py-2 px-4 rounded-md bg-green-600 disabled:bg-gray-400 hover:bg-green-700" 
+      className={FOOD_OPTIONS.some((v) => v === foodOption) 
+        ? "grow text-white py-2 px-4 rounded-md disabled:bg-gray-400 bg-green-600 hover:bg-green-700" 
+        : "grow text-white py-2 px-4 rounded-md disabled:bg-gray-400 bg-red-600 hover:bg-red-700"
+      }
       onClick={() => setDailyFoodCounter({
           day: dailyFoodCounter.day,
           count: {
