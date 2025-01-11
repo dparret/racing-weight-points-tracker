@@ -5,14 +5,16 @@ import Footer from './components/Footer';
 import DailyCount from './components/DailyCount';
 import { useLocalStorage } from 'usehooks-ts';
 import { startOfToday } from 'date-fns';
-import { computeDailyCount, dailyFoodCounter, FOOD_POINTS, foodOptions } from './utils';
 import CounterButtonAndReset from './components/CounterAndReset';
+import History from './components/History'
+import { computeDailyCount, dailyFoodCounter, FOOD_POINTS, foodOptions } from './utils';
 
 const PointsTracker = () => {
+  const day = startOfToday().toString();
   // Local storage
-  const [dailyFoodCounter, setDailyFoodCounter] = useLocalStorage<dailyFoodCounter>('dailyCount', 
+  const [dailyFoodCounter, setDailyFoodCounter] = useLocalStorage<dailyFoodCounter>(`dailyCount-${day}`, 
     {
-      day: startOfToday().toString(), 
+      day: day, 
       count: {
         fruits: [],
         vegetables: [],
@@ -43,10 +45,11 @@ const PointsTracker = () => {
             />
           )}
         </div>
+        <History />
       </main>
       <Footer />
     </div>
   );
-}
+};
 
 export default PointsTracker;

@@ -1,5 +1,3 @@
-"use client"
-
 import React, { SetStateAction }  from 'react';
 import { ArrowUturnLeftIcon } from '@heroicons/react/16/solid';
 import { dailyFoodCounter, FOOD_OPTIONS, foodOptions } from '../utils';
