@@ -17,8 +17,8 @@ const CounterButtonAndReset: React.FC<CounterButtonAndResetProps> = ({ foodOptio
     <button 
       type="button" 
       className={FOOD_OPTIONS.some((v) => v === foodOption) 
-        ? "grow text-white py-2 px-4 rounded-md disabled:bg-gray-400 bg-green-600 hover:bg-green-700" 
-        : "grow text-white py-2 px-4 rounded-md disabled:bg-gray-400 bg-red-600 hover:bg-red-700"
+        ? "grow text-white py-2 px-4 rounded-md disabled:bg-gray-400 bg-green-600 hover:bg-green-700 small:w-full large:w-1/2 large:max-w-96" 
+        : "grow text-white py-2 px-4 rounded-md disabled:bg-gray-400 bg-red-600 hover:bg-red-700 small:w-full large:w-1/2 large:max-w-96"
       }
       onClick={() => setDailyFoodCounter({
           day: dailyFoodCounter.day,

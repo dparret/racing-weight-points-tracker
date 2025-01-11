@@ -34,7 +34,7 @@ const PointsTracker = () => {
     <div className="grid grid-rows-[40px_1fr_24px] justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <DailyCount count={computeDailyCount(dailyFoodCounter)}/>
       <main className="flex flex-col gap-8 row-start-2 items-center w-full">
-        <div className="flex flex-col gap-4 w-1/2">
+        <div className="flex flex-col gap-4 small:w-full large:w-1/2 large:max-w-96">
           {Object.keys(dailyFoodCounter.count).map((key) => 
             <CounterButtonAndReset 
               key={key} 
